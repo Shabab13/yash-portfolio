@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasir Arafat | Mechanical Engineering Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: bold; font-size: 1.5rem; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=2070') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        header h1 { font-size: 3.5rem; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; max-width: 600px; font-weight: 300; }
+
+        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+
+        /* Skills Pills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e1e8ed;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 4px;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        /* Projects Section */
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: row;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .project-img {
+            flex: 1;
+            min-height: 300px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-info {
+            flex: 1.5;
+            padding: 30px;
+        }
+
+        .project-info h3 { color: var(--accent); margin-bottom: 10px; }
+        .project-date { font-size: 0.8rem; color: #777; margin-bottom: 15px; display: block; }
+        .project-info ul { list-style: none; }
+        .project-info ul li { margin-bottom: 10px; font-size: 0.95rem; position: relative; padding-left: 20px; }
+        .project-info ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Contact Section */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .project-card { flex-direction: column; }
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">YASIR ARAFAT</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="mailto:arafyasir2023@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Yasir Arafat</h1>
+        <p>Mechanical Engineering Student specializing in SolidWorks CAD, FEM Simulation, and Prototype Manufacturing.</p>
+        <div style="margin-top: 20px;">
+            <span class="skill-tag" style="background: var(--accent); color: white;">Available Sept 2026</span>
+        </div>
+    </header>
+
+    <div class="container" id="about">
+        <h2 style="text-align: center; margin-bottom: 40px;">Professional Profile</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; color: #555;">
+            Hands-on experience in SolidWorks CAD, FEM simulation, and prototype manufacturing. 
+            Across multiple industry-connected projects, I have mastered 3D printing, laser cutting, 
+            and iterative design for manufacturability. I thrive in multidisciplinary teams and 
+            take ownership of complex technical tasks.
+        </p>
+    </div>
+
+    <div class="container" id="projects">
+        <h2 style="text-align: center; margin-bottom: 40px;">Featured Projects</h2>
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1531265726475-52ad60219627?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="project-info">
+                <h3>CORDS VTS – Cyclist Safety Dummy System</h3>
+                <span class="project-date">Feb 2026 – Jun 2026</span>
+                <ul>
+                    <li>Designed articulated dummy components in SolidWorks for plastic assembly.</li>
+                    <li>Optimized parts for 3D printability (Cura slicer) to minimize support waste.</li>
+                    <li>Manufactured prototypes using FDM 3D printing, EVA foam, and PVC.</li>
+                    <li>Developed magnetic attachment systems for rapid testing cycles.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="project-info">
+                <h3>Closing the Loop – GFRC Waste Reuse</h3>
+                <span class="project-date">Sep 2025 – Jan 2026</span>
+                <ul>
+                    <li>Performed FEM simulations on homogeneous GFRC materials (Stress, Strain, Buckling).</li>
+                    <li>Validated FEM outputs against manual beam calculations.</li>
+                    <li>Conducted 3-point bending and crushing behavior testing.</li>
+                    <li>Determined structural reliability and cost-viability for "Fydro Baking Stones."</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="project-info">
+                <h3>Mechanical Battery – Planetary Gear Storage</h3>
+                <span class="project-date">Feb 2025 – Jun 2025</span>
+                <ul>
+                    <li>Designed a planetary gear-based energy storage system in SolidWorks.</li>
+                    <li>Machined components using lathes and laser-cut wooden housings.</li>
+                    <li>Analyzed system efficiency, achieving 33% measured against 55% theoretical.</li>
+                    <li>Integrated PLA springs and rotational assemblies.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="skills">
+        <h2 style="text-align: center; margin-bottom: 40px;">Technical Toolkit</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4><i class="fas fa-drafting-compass"></i> CAD & Simulation</h4>
+                <div class="skill-tag">SolidWorks</div>
+                <div class="skill-tag">FEM Simulation</div>
+                <div class="skill-tag">GD&T</div>
+                <div class="skill-tag">Assembly Design</div>
+                <div class="skill-tag">Buckling Analysis</div>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-tools"></i> Prototyping & MFG</h4>
+                <div class="skill-tag">FDM 3D Printing</div>
+                <div class="skill-tag">Cura Slicer</div>
+                <div class="skill-tag">Laser Cutting</div>
+                <div class="skill-tag">Lathe & Milling</div>
+                <div class="skill-tag">Manual Assembly</div>
+            </div>
+            <div class="skill-category">
+                <h4><i class="fas fa-check-double"></i> Other</h4>
+                <div class="skill-tag">Prototype Testing</div>
+                <div class="skill-tag">Technical Reporting</div>
+                <div class="skill-tag">English (C1)</div>
+                <div class="skill-tag">Team Collaboration</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Get In Touch</h2>
+        <p style="margin-bottom: 20px;">Amsterdam, Netherlands | (+31) 687 738 410</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/md-yasir-arafat-bd" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:arafyasir2023@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">© 2024 Yasir Arafat. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
