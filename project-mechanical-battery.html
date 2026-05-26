@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Battery | Yasir Arafat Mechanical Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+            --white: #ffffff;
+            --slate: #64748b;
+            --slate-light: #f1f5f9;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-weight: bold; font-size: 1.5rem; text-decoration: none; color: white; }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        /* Hero / Header Section */
+        header {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('assets/project3.png') center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        header h1 { font-size: 2.8rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; max-width: 700px; margin: auto; font-weight: 300; }
+
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+
+        /* Back Button */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 30px;
+            transition: transform 0.2s;
+        }
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        /* Grid Layout */
+        .project-detail-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Images and Gallery */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .img-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+
+        .img-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            max-height: 450px;
+            margin: 0 auto;
+        }
+
+        .img-caption {
+            font-size: 0.85rem;
+            color: var(--slate);
+            text-align: center;
+            padding: 12px;
+            background: var(--slate-light);
+            border-top: 1px solid var(--border);
+            font-weight: 500;
+        }
+
+        /* Content Details styling */
+        .info-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            height: fit-content;
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .tech-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .tech-specs-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            vertical-align: top;
+        }
+
+        .tech-specs-table td:first-child {
+            font-weight: 600;
+            color: var(--slate);
+            width: 40%;
+        }
+
+        .tech-specs-table td:last-child {
+            color: #1e293b;
+        }
+
+        .deliverables-list {
+            list-style: none;
+        }
+
+        .deliverables-list li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .deliverables-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">YASIR ARAFAT</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="mailto:arafyasir2023@gmail.com">Contact</a>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Mechanical Battery – Planetary Gear Storage</h1>
+        <p>Designing, lathe machining, and testing a planetary gear system for spring-wound kinetic energy storage.</p>
+    </header>
+
+    <div class="container">
+        <a href="index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+
+        <div class="project-detail-grid">
+            <!-- Left Column: Gallery -->
+            <div class="gallery-container">
+                <div class="img-card">
+                    <img src="assets/project3.png" alt="Planetary Gear Mechanical Battery Prototype">
+                    <div class="img-caption">Completed prototype showcasing precision gears and wood/acrylic enclosure</div>
+                </div>
+                <div class="img-card">
+                    <img src="assets/project3_details.png" alt="Exploded Assembly CAD Layout">
+                    <div class="img-caption">Exploded assembly schematic illustrating the sun, carrier, ring gears and bearings</div>
+                </div>
+            </div>
+
+            <!-- Right Column: Specs & Narrative -->
+            <div class="info-card">
+                <h3>Technical Specifications</h3>
+                <table class="tech-specs-table">
+                    <tr>
+                        <td>Mechanism Type</td>
+                        <td>Planetary Gear Train Speed Multiplier/Reducer</td>
+                    </tr>
+                    <tr>
+                        <td>Gearing Ratios</td>
+                        <td>Modulus 1.5 | Sun 32T, Planets 22T (x5), Ring Gear 108T</td>
+                    </tr>
+                    <tr>
+                        <td>Enclosure Materials</td>
+                        <td>Laser-cut birch wood structural ribs, clear acrylic cover plate</td>
+                    </tr>
+                    <tr>
+                        <td>Torsional spring</td>
+                        <td>3D-printed PLA torsion coil springs</td>
+                    </tr>
+                    <tr>
+                        <td>Efficiency Recovery</td>
+                        <td>33% measured kinetic efficiency (against 55% theoretical limits)</td>
+                    </tr>
+                </table>
+
+                <h3>Project Overview</h3>
+                <p style="margin-bottom: 20px; font-size: 0.95rem; color: #555;">
+                    Mechanical energy storage devices, like flywheels or springs, provide high power density and infinite charge-discharge cycles compared to chemical batteries. This project developed a compact, high-efficiency mechanical battery. It uses a planetary gear train speed multiplier connected to 3D printed torsion springs, storing potential energy that can be released as rotational kinetic force.
+                </p>
+
+                <h3>Key Deliverables</h3>
+                <ul class="deliverables-list">
+                    <li>Designed involute gear tooth profiles in SolidWorks to guarantee smooth gear engagement without binding under spring load.</li>
+                    <li>Programmed and executed toolpaths on a manual lathe to machine the steel AISI 4140 main shafts down to +/- 0.02 mm tolerances.</li>
+                    <li>Assembled the planetary carrier housing with 5 planet gears to distribute tangential loads evenly across the gears.</li>
+                    <li>Designed laser-cutter paths for the birch plywood casing structure, incorporating a clear acrylic viewport.</li>
+                    <li>Analyzed the energy conversion path to isolate friction losses, finding major friction in the lower guide bearing assembly.</li>
+                    <li>Documented recommendations to scale spring storage by switching from PLA to spring-steel coils.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Get In Touch</h2>
+        <p style="margin-bottom: 20px;">Amsterdam, Netherlands | (+31) 687 738 410</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/md-yasir-arafat-bd" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:arafyasir2023@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">© 2024 Yasir Arafat. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
