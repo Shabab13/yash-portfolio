@@ -94,14 +94,41 @@
         }
 
         /* Projects Section */
+        .project-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            margin-bottom: 40px;
+        }
+
+        .project-card-link:last-child {
+            margin-bottom: 0;
+        }
+
         .project-card {
             background: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 40px;
             display: flex;
             flex-direction: row;
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .project-card-link:focus {
+            outline: none;
+        }
+
+        .project-card-link:focus-visible .project-card {
+            outline: 3px solid var(--accent);
+            outline-offset: 4px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
         }
 
         .project-img {
@@ -115,13 +142,35 @@
         .project-info {
             flex: 1.5;
             padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-info h3 { color: var(--accent); margin-bottom: 10px; }
         .project-date { font-size: 0.8rem; color: #777; margin-bottom: 15px; display: block; }
-        .project-info ul { list-style: none; }
+        .project-info ul { list-style: none; margin-bottom: 15px; }
         .project-info ul li { margin-bottom: 10px; font-size: 0.95rem; position: relative; padding-left: 20px; }
         .project-info ul li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+        .more-details-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: auto;
+        }
+
+        .more-details-indicator i {
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover .more-details-indicator i {
+            transform: translateX(5px);
+        }
 
         /* Contact Section */
         footer {
@@ -161,9 +210,6 @@
     <header>
         <h1>Yasir Arafat</h1>
         <p>Mechanical Engineering Student specializing in SolidWorks CAD, FEM Simulation, and Prototype Manufacturing.</p>
-        <div style="margin-top: 20px;">
-            <span class="skill-tag" style="background: var(--accent); color: white;">Available Sept 2026</span>
-        </div>
     </header>
 
     <div class="container" id="about">
@@ -180,49 +226,73 @@
         <h2 style="text-align: center; margin-bottom: 40px;">Featured Projects</h2>
 
         <!-- Project 1 -->
-        <div class="project-card">
-            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1531265726475-52ad60219627?auto=format&fit=crop&q=80&w=800');"></div>
-            <div class="project-info">
-                <h3>CORDS VTS – Cyclist Safety Dummy System</h3>
-                <span class="project-date">Feb 2026 – Jun 2026</span>
-                <ul>
-                    <li>Designed articulated dummy components in SolidWorks for plastic assembly.</li>
-                    <li>Optimized parts for 3D printability (Cura slicer) to minimize support waste.</li>
-                    <li>Manufactured prototypes using FDM 3D printing, EVA foam, and PVC.</li>
-                    <li>Developed magnetic attachment systems for rapid testing cycles.</li>
-                </ul>
+        <a href="project-cords-vts.html" class="project-card-link" aria-label="Read details for CORDS VTS Cyclist Safety Dummy System">
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('assets/project1.png');"></div>
+                <div class="project-info">
+                    <div>
+                        <h3>CORDS VTS – Cyclist Safety Dummy System</h3>
+                        <span class="project-date">Feb 2026 – Jun 2026</span>
+                        <ul>
+                            <li>Designed articulated dummy components in SolidWorks for plastic assembly.</li>
+                            <li>Optimized parts for 3D printability (Cura slicer) to minimize support waste.</li>
+                            <li>Manufactured prototypes using FDM 3D printing, EVA foam, and PVC.</li>
+                            <li>Developed magnetic attachment systems for rapid testing cycles.</li>
+                        </ul>
+                    </div>
+                    <div class="more-details-indicator">
+                        <span>View Project Details & CAD Drawing</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Project 2 -->
-        <div class="project-card">
-            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&q=80&w=800');"></div>
-            <div class="project-info">
-                <h3>Closing the Loop – GFRC Waste Reuse</h3>
-                <span class="project-date">Sep 2025 – Jan 2026</span>
-                <ul>
-                    <li>Performed FEM simulations on homogeneous GFRC materials (Stress, Strain, Buckling).</li>
-                    <li>Validated FEM outputs against manual beam calculations.</li>
-                    <li>Conducted 3-point bending and crushing behavior testing.</li>
-                    <li>Determined structural reliability and cost-viability for "Fydro Baking Stones."</li>
-                </ul>
+        <a href="project-gfrc-waste.html" class="project-card-link" aria-label="Read details for Closing the Loop GFRC Waste Reuse">
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('assets/project2.png');"></div>
+                <div class="project-info">
+                    <div>
+                        <h3>Closing the Loop – GFRC Waste Reuse</h3>
+                        <span class="project-date">Sep 2025 – Jan 2026</span>
+                        <ul>
+                            <li>Performed FEM simulations on homogeneous GFRC materials (Stress, Strain, Buckling).</li>
+                            <li>Validated FEM outputs against manual beam calculations.</li>
+                            <li>Conducted 3-point bending and crushing behavior testing.</li>
+                            <li>Determined structural reliability and cost-viability for "Fydro Baking Stones."</li>
+                        </ul>
+                    </div>
+                    <div class="more-details-indicator">
+                        <span>View Project Details & FEM Graphs</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
-        </div>
+        </a>
 
         <!-- Project 3 -->
-        <div class="project-card">
-            <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=800');"></div>
-            <div class="project-info">
-                <h3>Mechanical Battery – Planetary Gear Storage</h3>
-                <span class="project-date">Feb 2025 – Jun 2025</span>
-                <ul>
-                    <li>Designed a planetary gear-based energy storage system in SolidWorks.</li>
-                    <li>Machined components using lathes and laser-cut wooden housings.</li>
-                    <li>Analyzed system efficiency, achieving 33% measured against 55% theoretical.</li>
-                    <li>Integrated PLA springs and rotational assemblies.</li>
-                </ul>
+        <a href="project-mechanical-battery.html" class="project-card-link" aria-label="Read details for Mechanical Battery Planetary Gear Storage">
+            <div class="project-card">
+                <div class="project-img" style="background-image: url('assets/project3.png');"></div>
+                <div class="project-info">
+                    <div>
+                        <h3>Mechanical Battery – Planetary Gear Storage</h3>
+                        <span class="project-date">Feb 2025 – Jun 2025</span>
+                        <ul>
+                            <li>Designed a planetary gear-based energy storage system in SolidWorks.</li>
+                            <li>Machined components using lathes and laser-cut wooden housings.</li>
+                            <li>Analyzed system efficiency, achieving 33% measured against 55% theoretical.</li>
+                            <li>Integrated PLA springs and rotational assemblies.</li>
+                        </ul>
+                    </div>
+                    <div class="more-details-indicator">
+                        <span>View Project Details & Exploded CAD Assembly</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div class="container" id="skills">
