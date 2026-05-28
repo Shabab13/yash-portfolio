@@ -397,14 +397,24 @@ footer {
   font-size: 1.3rem; letter-spacing: 0.08em; color: var(--dark);
 }
 .ft-logo em { color: var(--orange); font-style: normal; }
-.ft-links { display: flex; gap: 24px; }
+.ft-links { display: flex; gap: 24px; align-items: center; }
 .ft-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem; color: var(--mid);
-  text-decoration: none; letter-spacing: 0.06em;
-  transition: color .2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mid);
+  text-decoration: none;
+  transition: color .2s, transform .2s;
 }
-.ft-links a:hover { color: var(--orange); }
+.ft-links a:hover {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+.ft-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
 
 /* ── REVEAL ── */
 .reveal {
