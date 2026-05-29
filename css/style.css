@@ -138,12 +138,13 @@ h1.name .nm-last { color: var(--orange); }
 .btn-dark {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 32px;
+  border: 2px solid var(--dark);
   background: var(--dark); color: #fff;
   font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 0.9rem;
   text-decoration: none; border-radius: 3px;
-  transition: background .2s;
+  transition: background .2s, border-color .2s;
 }
-.btn-dark:hover { background: var(--orange); }
+.btn-dark:hover { background: var(--orange); border-color: var(--orange); }
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 14px 28px;
@@ -244,9 +245,13 @@ h1.name .nm-last { color: var(--orange); }
 .sk-card {
   background: var(--white);
   border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
-  transition: transform .25s, box-shadow .25s;
+  transition: transform .25s, border-color .25s, background .25s;
 }
-.sk-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(0,0,0,0.09); }
+.sk-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--orange);
+  background: var(--orange2);
+}
 
 .sk-head {
   background: var(--dark);
