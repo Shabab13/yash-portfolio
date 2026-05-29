@@ -247,10 +247,12 @@ h1.name .nm-last { color: var(--orange); }
   border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
   transition: transform .25s, border-color .25s, background .25s;
 }
-.sk-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--orange);
-  background: var(--orange2);
+@media (hover: hover) {
+  .sk-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+    background: var(--orange2);
+  }
 }
 
 .sk-head {
@@ -304,8 +306,10 @@ h1.name .nm-last { color: var(--orange); }
   transform: scaleY(0); transform-origin: top;
   transition: transform .3s ease;
 }
-.proj-item:hover { background: var(--orange2); padding-left: 22px; }
-.proj-item:hover::before { transform: scaleY(1); }
+@media (hover: hover) {
+  .proj-item:hover { background: var(--orange2); padding-left: 22px; }
+  .proj-item:hover::before { transform: scaleY(1); }
+}
 
 .proj-top {
   display: flex; align-items: flex-start;
@@ -321,7 +325,9 @@ h1.name .nm-last { color: var(--orange); }
   font-size: 1.95rem; letter-spacing: 0.02em; line-height: 1.05;
   color: var(--dark); transition: color .2s;
 }
-.proj-item:hover .proj-name { color: var(--orange); }
+@media (hover: hover) {
+  .proj-item:hover .proj-name { color: var(--orange); }
+}
 .proj-period {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem; color: var(--light);
@@ -340,10 +346,12 @@ h1.name .nm-last { color: var(--orange); }
   font-size: 0.65rem; color: var(--mid); letter-spacing: 0.04em;
   transition: background .2s, border-color .2s, color .2s;
 }
-.proj-item:hover .proj-tag {
-  background: rgba(255,69,0,0.06);
-  border-color: rgba(255,69,0,0.28);
-  color: var(--orange);
+@media (hover: hover) {
+  .proj-item:hover .proj-tag {
+    background: rgba(255,69,0,0.06);
+    border-color: rgba(255,69,0,0.28);
+    color: var(--orange);
+  }
 }
 
 /* ── CERTIFICATIONS ── */
@@ -379,11 +387,13 @@ h1.name .nm-last { color: var(--orange); }
   background: var(--paper);
   transition: border-color .25s, background .25s, transform .25s, box-shadow .25s;
 }
-.edu-row:hover {
-  border-color: rgba(255,69,0,0.45);
-  background: rgba(255,69,0,0.04);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+@media (hover: hover) {
+  .edu-row:hover {
+    border-color: rgba(255,69,0,0.45);
+    background: rgba(255,69,0,0.04);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  }
 }
 .edu-k {
   font-family: 'JetBrains Mono', monospace;
