@@ -288,8 +288,11 @@ h1.name .nm-last { color: var(--orange); }
   transform: rotate(45deg);
 }
 
+/* ── WORK ── */
+#work { background: var(--white); padding-bottom: 80px; }
+
 /* ── PROJECTS ── */
-#projects { background: var(--white); padding-bottom: 80px; }
+#projects { background: var(--paper); padding-bottom: 80px; }
 
 .proj-list { border-top: 2.5px solid var(--dark); }
 
@@ -346,6 +349,7 @@ h1.name .nm-last { color: var(--orange); }
   font-size: 0.65rem; color: var(--mid); letter-spacing: 0.04em;
   transition: background .2s, border-color .2s, color .2s;
 }
+#projects .proj-tag { background: var(--white); }
 @media (hover: hover) {
   .proj-item:hover .proj-tag {
     background: rgba(255,69,0,0.06);
@@ -355,11 +359,11 @@ h1.name .nm-last { color: var(--orange); }
 }
 
 /* ── CERTIFICATIONS ── */
-#certifications { background: var(--paper); padding-bottom: 80px; }
+#certifications { background: var(--white); padding-bottom: 80px; }
 
 /* ── EDUCATION ── */
 #education {
-  background: var(--white); color: var(--dark); padding-bottom: 100px;
+  background: var(--paper); color: var(--dark); padding-bottom: 100px;
 }
 
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -384,7 +388,7 @@ h1.name .nm-last { color: var(--orange); }
   padding: 20px 24px;
   border: 1px solid var(--border);
   border-radius: 3px;
-  background: var(--paper);
+  background: var(--white);
   transition: border-color .25s, background .25s, transform .25s, box-shadow .25s;
 }
 @media (hover: hover) {
@@ -404,7 +408,7 @@ h1.name .nm-last { color: var(--orange); }
 
 /* ── FOOTER ── */
 footer {
-  background: var(--paper);
+  background: var(--white);
   border-top: 2.5px solid var(--dark);
   padding: 38px 64px;
   display: flex; align-items: center; justify-content: space-between;
