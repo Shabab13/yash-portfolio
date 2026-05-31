@@ -1,11 +1,28 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* 
+======================================================================
+TABLE OF CONTENTS
+======================================================================
+1. DESIGN TOKENS (:root)
+2. RESET & BASE STYLES
+3. NAVIGATION (nav)
+4. LAYOUT WRAPPERS (.wrap)
+5. COMMON & EXTRACTED COMPONENTS (.btn, .sec-hd, .proj-heading-wrap)
+6. SECTION STYLES
+   - Hero Section (#hero)
+   - Blueprint Card Theme (.bp-card, #gearSVG)
+   - Skills Section (#skills)
+   - Experience & Projects (.proj-list, .proj-item)
+   - Certifications Section (#certifications)
+   - Education Section (#education)
+7. FOOTER
+8. SCROLL REVEAL (animations)
+9. RESPONSIVE MEDIA QUERIES
+======================================================================
+*/
 
+/* ===================================================================
+   1. DESIGN TOKENS
+   =================================================================== */
 :root {
   /* ── Brand Colors (Solid Hex) ── */
   --white: #ffffff;
@@ -54,6 +71,17 @@
   /* Category text on dark header (0.35 alpha) */
 }
 
+/* ===================================================================
+   2. RESET & BASE STYLES
+   =================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -67,7 +95,9 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAV ── */
+/* ===================================================================
+   3. NAVIGATION
+   =================================================================== */
 nav {
   position: fixed;
   top: 0;
@@ -136,14 +166,110 @@ nav {
   opacity: .85;
 }
 
-/* ── WRAPPER ── */
+/* ===================================================================
+   4. LAYOUT WRAPPERS
+   =================================================================== */
 .wrap {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 64px;
 }
 
-/* ── HERO ── */
+/* ===================================================================
+   5. COMMON & EXTRACTED COMPONENTS
+   =================================================================== */
+/* ── Buttons ── */
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border: 2px solid var(--dark);
+  background: var(--dark);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background .2s, border-color .2s;
+}
+
+.btn-dark:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: 2px solid var(--dark);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: border-color .2s, color .2s;
+}
+
+.btn-outline:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* Modifier: Small Outline Button */
+.btn-outline-sm {
+  padding: 8px 20px;
+  font-size: 0.75rem;
+}
+
+/* ── Section Headings ── */
+.sec-hd {
+  padding-top: 110px;
+  margin-bottom: 60px;
+}
+
+.sec-num-bg {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--sec-num);
+  user-select: none;
+  display: block;
+  margin-bottom: -1.5rem;
+}
+
+.sec-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--orange);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+/* ── Extracted Heading Wrapper (Semantic Flex Wrapper) ── */
+.proj-heading-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* ===================================================================
+   6. SECTION STYLES
+   =================================================================== */
+
+/* ── HERO SECTION ── */
 #hero {
   padding-top: 66px;
   min-height: 100vh;
@@ -173,6 +299,7 @@ nav {
   width: 100%;
   padding: 80px 0 60px;
 }
+
 
 .hero-eyebrow {
   display: inline-flex;
@@ -257,55 +384,7 @@ h1.name .nm-last {
   color: var(--light);
 }
 
-/* CTA buttons */
-.hero-ctas {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.btn-dark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 32px;
-  border: 2px solid var(--dark);
-  background: var(--dark);
-  color: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: background .2s, border-color .2s;
-}
-
-.btn-dark:hover {
-  background: var(--orange);
-  border-color: var(--orange);
-}
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border: 2px solid var(--dark);
-  color: var(--dark);
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-  border-radius: 3px;
-  transition: border-color .2s, color .2s;
-}
-
-.btn-outline:hover {
-  border-color: var(--orange);
-  color: var(--orange);
-}
-
-/* ── BLUEPRINT CARD ── */
+/* ── BLUEPRINT CARD THEME ── */
 .hero-right {
   display: flex;
   justify-content: center;
@@ -410,39 +489,7 @@ h1.name .nm-last {
   color: var(--bp-text);
 }
 
-/* ── SECTION HEADER ── */
-.sec-hd {
-  padding-top: 110px;
-  margin-bottom: 60px;
-}
-
-.sec-num-bg {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 7rem;
-  line-height: 1;
-  color: var(--sec-num);
-  user-select: none;
-  display: block;
-  margin-bottom: -1.5rem;
-}
-
-.sec-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--orange);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-.sec-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  letter-spacing: 0.02em;
-  line-height: 1;
-}
-
-/* ── SKILLS ── */
+/* ── SKILLS SECTION ── */
 #skills {
   background: var(--paper);
   padding-bottom: 80px;
@@ -533,18 +580,34 @@ h1.name .nm-last {
   transform: rotate(45deg);
 }
 
-/* ── WORK ── */
+/* ── WORK EXPERIENCE SECTION ── */
 #work {
   background: var(--white);
   padding-bottom: 80px;
 }
 
-/* ── PROJECTS ── */
+/* Modifier classes for Work title and company (formerly inline styles) */
+.work-title {
+  font-size: 1.65rem;
+  margin-bottom: 4px;
+}
+
+.work-company {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--orange);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ── PROJECTS SECTION ── */
 #projects {
   background: var(--paper);
   padding-bottom: 80px;
 }
 
+/* Shared components for Work & Projects */
 .proj-list {
   border-top: 2.5px solid var(--dark);
 }
@@ -579,7 +642,7 @@ h1.name .nm-last {
     transform: scaleY(1);
   }
 
-  /* Paper-bg sections get subtler hue */
+  /* Paper-bg sections get subtler hover hue */
   #projects .proj-item:hover {
     background: var(--orange-hover-subtle);
   }
@@ -658,26 +721,26 @@ h1.name .nm-last {
 
 @media (hover: hover) {
 
-  /* White-bg sections: tags get stronger hue */
+  /* White-bg sections: tags get stronger hover hue */
   .proj-item:hover .proj-tag {
     background: var(--orange-hover-strong);
     border-color: var(--orange-border-hover);
     color: var(--orange);
   }
 
-  /* Paper-bg sections: tags get subtler hue */
+  /* Paper-bg sections: tags get subtler hover hue */
   #projects .proj-item:hover .proj-tag {
     background: var(--orange-hover-subtle);
   }
 }
 
-/* ── CERTIFICATIONS ── */
+/* ── CERTIFICATIONS SECTION ── */
 #certifications {
   background: var(--white);
   padding-bottom: 80px;
 }
 
-/* ── EDUCATION ── */
+/* ── EDUCATION SECTION ── */
 #education {
   background: var(--paper);
   color: var(--dark);
@@ -755,7 +818,9 @@ h1.name .nm-last {
   color: var(--dark);
 }
 
-/* ── FOOTER ── */
+/* ===================================================================
+   7. FOOTER
+   =================================================================== */
 footer {
   background: var(--white);
   border-top: 2.5px solid var(--dark);
@@ -803,7 +868,9 @@ footer {
   display: block;
 }
 
-/* ── REVEAL ── */
+/* ===================================================================
+   8. SCROLL REVEAL
+   =================================================================== */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -827,7 +894,9 @@ footer {
   transition-delay: .3s;
 }
 
-/* ── RESPONSIVE ── */
+/* ===================================================================
+   9. RESPONSIVE MEDIA QUERIES
+   =================================================================== */
 @media (max-width: 980px) {
   nav {
     padding: 0 28px;

@@ -20,7 +20,6 @@
   <meta property="og:description"
     content="Portfolio showcasing SolidWorks CAD design, FEM structural simulation, stress & buckling analysis, and functional mechanical prototyping." />
   <meta property="og:image" content="https://linkedin.com/in/md-yasir-arafat-bd" />
-  <!-- Standard fallback path or custom graphic -->
   <meta property="og:url" content="https://linkedin.com/in/md-yasir-arafat-bd" />
 
   <!-- Twitter Cards -->
@@ -84,7 +83,7 @@
       <li><a href="#certifications">Certifications</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
-    <a href="mailto:arafyasir2023@gmail.com" class="nav-cta">Contact ↗</a>
+    <a href="mailto:arafyasir2023@gmail.com" class="nav-cta" aria-label="Email Yasir to get in touch">Contact ↗</a>
   </nav>
 
   <!-- Hero Section -->
@@ -120,7 +119,8 @@
           </div>
           <div class="hero-ctas">
             <a href="#projects" class="btn-dark">View Projects ↓</a>
-            <a href="Resume%20Yash%20V4.pdf" target="_blank" class="btn-outline">View Resume</a>
+            <a href="Resume%20Yash%20V4.pdf" target="_blank" class="btn-outline"
+              aria-label="Open Resume PDF in a new tab">View Resume</a>
           </div>
         </div>
 
@@ -283,13 +283,11 @@
         <!-- Job 1 -->
         <div class="proj-item reveal">
           <div class="proj-top">
-            <div style="display:flex;align-items:flex-start;gap:18px">
+            <div class="proj-heading-wrap">
               <span class="proj-num">01</span>
               <div>
-                <div class="proj-name" style="font-size:1.65rem;margin-bottom:4px;">Project Engineer</div>
-                <div
-                  style="font-family:'JetBrains Mono', monospace;font-size:0.75rem;color:var(--orange);letter-spacing:0.04em;text-transform:uppercase;font-weight:600;">
-                  Fydro Baking Stones</div>
+                <div class="proj-name work-title">Project Engineer</div>
+                <div class="work-company">Fydro Baking Stones</div>
               </div>
             </div>
             <span class="proj-period">Sep 2025 – Jan 2026</span>
@@ -326,7 +324,7 @@
         <!-- Project 1 -->
         <div class="proj-item reveal">
           <div class="proj-top">
-            <div style="display:flex;align-items:flex-start;gap:18px">
+            <div class="proj-heading-wrap">
               <span class="proj-num">01</span>
               <div class="proj-name">CORDS VTS: Cyclist Safety Dummy System</div>
             </div>
@@ -353,7 +351,7 @@
         <!-- Project 2 -->
         <div class="proj-item reveal">
           <div class="proj-top">
-            <div style="display:flex;align-items:flex-start;gap:18px">
+            <div class="proj-heading-wrap">
               <span class="proj-num">02</span>
               <div class="proj-name">Mechanical Battery: Planetary Gear Energy Storage</div>
             </div>
@@ -377,7 +375,7 @@
         <!-- Project 3 -->
         <div class="proj-item reveal">
           <div class="proj-top">
-            <div style="display:flex;align-items:flex-start;gap:18px">
+            <div class="proj-heading-wrap">
               <span class="proj-num">03</span>
               <div class="proj-name">Industrial Vibrating Conveyor</div>
             </div>
@@ -416,7 +414,7 @@
         <!-- Certification 1 -->
         <div class="proj-item reveal">
           <div class="proj-top">
-            <div style="display:flex;align-items:flex-start;gap:18px">
+            <div class="proj-heading-wrap">
               <span class="proj-num">01</span>
               <div class="proj-name">Safety for Operational Supervisors (VCA)</div>
             </div>
@@ -428,8 +426,8 @@
             manufacturing, and operational environments.
           </p>
           <div class="proj-tags">
-            <a href="VCA%20Certificate.pdf" target="_blank" class="btn-outline"
-              style="padding:8px 20px;font-size:0.75rem;">View Certificate</a>
+            <a href="VCA%20Certificate.pdf" target="_blank" class="btn-outline btn-outline-sm"
+              aria-label="Open safety certificate PDF in a new tab">View Certificate</a>
           </div>
         </div>
       </div>
@@ -473,6 +471,7 @@
   <footer>
     <div class="ft-logo">YASIR<em>.</em></div>
     <div class="ft-links">
+      <!-- Email Icon (Envelope) -->
       <a href="mailto:arafyasir2023@gmail.com" aria-label="Email Yasir" title="Email: arafyasir2023@gmail.com">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
@@ -480,6 +479,8 @@
           <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
       </a>
+
+      <!-- LinkedIn Icon (Logo) -->
       <a href="https://linkedin.com/in/md-yasir-arafat-bd" target="_blank" rel="noopener"
         aria-label="Yasir's LinkedIn Profile" title="LinkedIn Profile">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -489,6 +490,8 @@
           <circle cx="4" cy="4" r="2"></circle>
         </svg>
       </a>
+
+      <!-- Phone Icon (Telephone Handset) -->
       <a href="tel:+31687738410" aria-label="Call Yasir" title="Phone: (+31) 687 738 410">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
