@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Gear teeth (outer polygon) -->
+  <polygon
+    points="32,4 37,12 46,9 46,18 55,21 51,29 58,35 51,41 55,49 46,52 46,61 37,58 32,66 27,58 18,61 18,52 9,49 13,41 6,35 13,29 9,21 18,18 18,9 27,12"
+    fill="#ff4500"
+    transform="scale(0.88) translate(3.7,0)"
+  />
+  <!-- Center hub hole -->
+  <circle cx="32" cy="34" r="10" fill="#ffffff" />
+  <!-- Inner accent dot -->
+  <circle cx="32" cy="34" r="4.5" fill="#ff4500" />
+</svg>
