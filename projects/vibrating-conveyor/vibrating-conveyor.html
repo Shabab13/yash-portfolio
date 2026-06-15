@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structural Redesign of Industrial Vibrating Conveyor Using FEM Analysis | Yasir Arafat</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+
+  <meta name="description"
+    content="Structural redesign of an industrial vibrating conveyor using SolidWorks FEM. Reduced natural frequency from 28 Hz to 15 Hz to create a safe margin from the 33 Hz excitation frequency." />
+  <meta name="author" content="Yasir Arafat" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/project.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../../index.html#hero" class="nav-logo">YASIR<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#work">Work</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#certifications">Certifications</a></li>
+      <li><a href="../../index.html#education">Education</a></li>
+    </ul>
+    <a href="mailto:arafyasir2023@gmail.com" class="nav-cta" aria-label="Email Yasir">Contact ↗</a>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="proj-hero">
+    <div class="wrap">
+      <div class="proj-hero-inner">
+        <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
+        <div class="proj-hero-meta">
+          <span class="proj-hero-num">03</span>
+          <div class="proj-hero-category">FEM Simulation · Structural Dynamics</div>
+        </div>
+        <h1 class="proj-hero-title">Structural Redesign of Industrial Vibrating Conveyor Using FEM Analysis</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <div class="proj-img-hero wrap reveal">
+    <img src="images/frame-deflection.png" alt="Redesigned Frame — FEM Displacement Simulation (~0.17 mm)">
+  </div>
+
+  <!-- Main Content -->
+  <main class="proj-main">
+    <div class="wrap proj-content-grid">
+
+      <!-- Left: Body -->
+      <div class="proj-body">
+
+        <!-- Overview -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Overview</div>
+          <h2 class="proj-section-title">Project Summary</h2>
+          <p>Conducted a full structural and dynamic analysis of an industrial vibratory conveyor frame, then produced a
+            validated redesign. Static FEM simulations identified high-deflection zones in the original I-beam frame,
+            which was replaced with 80 × 80 × 5 mm hollow box sections (alloy steel) — reducing maximum deflection from
+            8.6 mm to 0.17 mm. A frequency study then confirmed the redesigned frame's natural frequency shifted from
+            28.35 Hz to 14.88 Hz, establishing a safe 18 Hz margin from the 33 Hz operating excitation frequency.</p>
+        </section>
+
+        <!-- FEM Results -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">FEM Results</div>
+          <h2 class="proj-section-title">Deflection: Original vs. Redesigned</h2>
+          <div class="img-row reveal">
+            <img src="images/gantry-deflection.png" alt="Original frame gantry deflection (~0.24 mm worst-case)">
+            <img src="images/frame-deflection.png" alt="Redesigned frame full deflection (~0.17 mm)">
+          </div>
+        </section>
+
+        <!-- Frequency Analysis -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Vibration Analysis</div>
+          <h2 class="proj-section-title">Resonance &amp; Harmonic Study</h2>
+          <p>The original frame operated at 28.35 Hz — dangerously close to the 33 Hz drive frequency. The redesigned
+            frame was tuned to 14.88 Hz, providing an 18 Hz safety margin. A harmonic linear dynamic sweep (0–33 Hz)
+            confirmed the redesigned frame avoids resonance-driven deflection spikes entirely.</p>
+          <div class="img-row reveal">
+            <img src="images/original-frequency.png" alt="Original frame natural frequency mode shape (28.35 Hz)">
+            <img src="images/frequency-response.png" alt="Displacement amplitude vs. frequency response curve">
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Conclusion</div>
+          <h2 class="proj-section-title">Summary &amp; Outcomes</h2>
+          <p>The hollow box-section redesign met all structural objectives: maximum deflection reduced from 8.6 mm to
+            0.17 mm, natural frequency shifted from 28.35 Hz to 14.88 Hz, and a safe 18.12 Hz resonance margin
+            established. All analytical results were confirmed within 1% by SolidWorks FEM simulations. The project was
+            delivered as a full technical report with methodology, simulation screenshots, and recommendations for
+            physical prototype validation.</p>
+        </section>
+
+      </div>
+
+      <!-- Right: Sidebar -->
+      <aside class="proj-sidebar">
+        <div class="sidebar-card reveal">
+          <div class="sidebar-card-title">Technologies Used</div>
+          <ul class="sidebar-tag-list">
+            <li>SolidWorks CAD</li>
+            <li>SolidWorks Simulation (FEM)</li>
+            <li>Static Stress Analysis</li>
+            <li>Frequency / Modal Analysis</li>
+          </ul>
+        </div>
+
+        <div class="bp-card reveal d1" style="transform: none; width: 100%; box-sizing: border-box;">
+          <div class="bp-head">
+            <span class="bp-label">At a Glance</span>
+            <span class="bp-id">FEM: VC–003</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
+            <div class="tb">
+              <div class="tb-k">Max Deflection</div>
+              <div class="tb-v" style="font-weight: 500;">0.17 mm</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Original f<sub>n</sub></div>
+              <div class="tb-v" style="font-weight: 500;">28.35 Hz</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Redesigned f<sub>n</sub></div>
+              <div class="tb-v" style="font-weight: 500;">14.88 Hz</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Drive Frequency</div>
+              <div class="tb-v" style="font-weight: 500;">33 Hz</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Resonance Gap</div>
+              <div class="tb-v" style="font-weight: 500;">18.12 Hz</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Beam Profile</div>
+              <div class="tb-v" style="font-weight: 500;">80×80×5 mm</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="../../index.html#projects" class="btn-dark sidebar-btn reveal d3">All Projects ↗</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-logo">YASIR<em>.</em></div>
+    <div class="ft-links">
+      <a href="mailto:arafyasir2023@gmail.com" aria-label="Email Yasir">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/md-yasir-arafat-bd" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="tel:+31687738410" aria-label="Call Yasir" title="Phone: (+31) 687 738 410">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+</body>
+
+</html>

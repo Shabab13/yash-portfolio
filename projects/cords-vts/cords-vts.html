@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Printed Modular Cyclist Crash-Test Dummy | Yasir Arafat</title>
+
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+
+  <meta name="description"
+    content="3D Printed Modular Cyclist Crash-Test Dummy for vehicle safety testing — designed in SolidWorks, manufactured using FDM 3D printing, laser-cut EVA foam, and magnetic attachment systems." />
+  <meta name="author" content="Yasir Arafat" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/project.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="../../index.html#hero" class="nav-logo">YASIR<em>.</em></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#work">Work</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#certifications">Certifications</a></li>
+      <li><a href="../../index.html#education">Education</a></li>
+    </ul>
+    <a href="mailto:arafyasir2023@gmail.com" class="nav-cta" aria-label="Email Yasir">Contact ↗</a>
+  </nav>
+
+  <!-- Project Hero -->
+  <section class="proj-hero">
+    <div class="wrap">
+      <div class="proj-hero-inner">
+        <a href="../../index.html#projects" class="back-link">← Back to Projects</a>
+        <div class="proj-hero-meta">
+          <span class="proj-hero-num">01</span>
+          <div class="proj-hero-category">Rapid Prototyping · FDM 3D Printing · Plastic Design</div>
+        </div>
+        <h1 class="proj-hero-title">3D Printed Modular Cyclist Crash-Test Dummy</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Image -->
+  <div class="proj-img-hero wrap reveal">
+    <img src="images/project-hero.jpg" alt="Initial 3D CAD Concept of Articulated Cyclist Dummy Model">
+  </div>
+
+  <!-- Main Content -->
+  <main class="proj-main">
+    <div class="wrap proj-content-grid">
+
+      <!-- Left: Body -->
+      <div class="proj-body">
+
+        <!-- Overview -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Overview</div>
+          <h2 class="proj-section-title">Project Summary</h2>
+          <p>Redesigned a low-cost, reusable cyclist dummy system for ADAS (Advanced Driver Assistance Systems) testing
+            at HAN University. The dummy integrates a PVC skeleton, laser-cut EVA foam panels, and PLA 3D-printed
+            connectors, and is engineered to survive repeated low-speed vehicle impacts without damage. The system
+            combines an articulated dummy with a motorized bicycle frame to mimic realistic cyclist motion.</p>
+        </section>
+
+        <!-- Dummy Design Section -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Dummy Design</div>
+          <h2 class="proj-section-title">Articulated Joint Connectors</h2>
+          <p>The dummy utilizes FDM 3D-printed PLA joint connectors and a PVC skeleton. Movable joints are manually
+            adjustable to set walking or cycling postures, with single-plane knee/elbow rotation (90° to 126°) locked
+            via pins. Large parts were split to avoid overhangs exceeding 45° in Cura, minimizing support material and
+            post-processing times.</p>
+          <div class="img-row reveal">
+            <img src="images/skeleton-assembly.jpg"
+              alt="Partial leg assembly showing internal PVC frame and 3D-printed joints">
+            <img src="images/walking-test.jpg"
+              alt="Joint articulation test showing the dummy skeleton in a walking posture">
+          </div>
+        </section>
+
+        <!-- Bicycle Design Section -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Bicycle Design</div>
+          <h2 class="proj-section-title">Motorised Bicycle Frame</h2>
+          <p>Built from lightweight aluminium and PVC tubes cut to NEN-ISO 19206-4 standards, the bicycle frame features
+            3D-printed joints with a shear breaking-pin design at the wheel hubs (J2 and J8). A 4 mm polymer pin shears
+            on impact to protect frame connections. Three Dynamixel servos are integrated directly into the axles and
+            crank, eliminating mechanical transmissions.</p>
+          <div class="img-row reveal">
+            <img src="images/bicycle-cad-layout.jpg" alt="Bicycle CAD model highlighting joint layout J1 to J8">
+            <img src="images/assembled-bicycle-frame.jpg" alt="Assembled bicycle frame with impact-absorbing foam wrap">
+          </div>
+        </section>
+
+        <!-- System Architecture Section -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">System Architecture</div>
+          <h2 class="proj-section-title">Control &amp; Schematic</h2>
+          <p>An Olimexino STM32F3 microcontroller and OpenCM 485 shield drive two parallel motor chains: one for bicycle
+            rolling motion and another for dummy limb articulation. Standard Dynamixel cabling was replaced with
+            custom-fabricated 3-wire lines and magnetic connectors to enable quick assembly and prevent polarity errors.
+          </p>
+          <div class="img-wide reveal">
+            <img src="images/electrical-schematic.jpg"
+              alt="Electrical architecture schematic showing Olimexino, OpenCM shield, and motors">
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="proj-section reveal">
+          <div class="proj-section-label">Conclusion</div>
+          <h2 class="proj-section-title">Summary &amp; Outcomes</h2>
+          <p>The final dummy system met all functional requirements, achieving a total weight under 30 kg and
+            assembly/disassembly under 3 minutes. The magnetic quick-release joint system successfully releases on
+            impact and was validated across 50+ impact cycles within a strict €297 budget.</p>
+        </section>
+
+      </div>
+
+      <!-- Right: Sidebar -->
+      <aside class="proj-sidebar">
+        <div class="sidebar-card reveal">
+          <div class="sidebar-card-title">Technologies Used</div>
+          <ul class="sidebar-tag-list">
+            <li>SolidWorks CAD</li>
+            <li>FDM 3D Printing (PLA)</li>
+            <li>Cura Slicer</li>
+            <li>Laser Cutting</li>
+            <li>Microcontroller Programming</li>
+          </ul>
+        </div>
+
+        <div class="bp-card reveal d1" style="transform: none; width: 100%; box-sizing: border-box;">
+          <div class="bp-head">
+            <span class="bp-label">At a Glance</span>
+            <span class="bp-id">PRJ: CD–001</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px;">
+            <div class="tb">
+              <div class="tb-k">Total Budget</div>
+              <div class="tb-v" style="font-weight: 500;">€297</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Assembly Time</div>
+              <div class="tb-v" style="font-weight: 500;">&lt; 3 min</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Total Weight</div>
+              <div class="tb-v" style="font-weight: 500;">&le; 30 kg</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Actuation</div>
+              <div class="tb-v" style="font-weight: 500;">3 × Servos</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Quick-Release</div>
+              <div class="tb-v" style="font-weight: 500;">Magnetic</div>
+            </div>
+            <div class="tb">
+              <div class="tb-k">Impact Safety</div>
+              <div class="tb-v" style="font-weight: 500;">Shear Pins</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="../../index.html#projects" class="btn-dark sidebar-btn reveal d3">All Projects ↗</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="ft-logo">YASIR<em>.</em></div>
+    <div class="ft-links">
+      <a href="mailto:arafyasir2023@gmail.com" aria-label="Email Yasir">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/md-yasir-arafat-bd" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+          <rect x="2" y="9" width="4" height="12"></rect>
+          <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+      </a>
+      <a href="tel:+31687738410" aria-label="Call Yasir" title="Phone: (+31) 687 738 410">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ft-icon">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
+</body>
+
+</html>

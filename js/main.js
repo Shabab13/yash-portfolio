@@ -4,7 +4,31 @@
  * and manages intersection-based scroll reveal animations.
  */
 
+// =================================================================
+// 0. CROSS-PAGE SMOOTH SCROLL
+// When arriving from another page with a hash (e.g. index.html#projects),
+// instantly jump to top then smoothly scroll to the target.
+// =================================================================
+(function () {
+  if (location.hash) {
+    // Disable browser's native scroll restoration so it doesn't auto-jump
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    // Force top before paint
+    window.scrollTo(0, 0);
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Smooth scroll to hash target after page has rendered
+  if (location.hash) {
+    const target = document.querySelector(location.hash);
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 80); // Small delay lets the page fully render first
+    }
+  }
+
 
   // =================================================================
   // 1. GEAR CONFIGURATION (Geometric Specs & Mechanical Data)
