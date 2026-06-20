@@ -5,7 +5,17 @@
  */
 
 // =================================================================
-// 0. CROSS-PAGE SMOOTH SCROLL
+// 0a. THEME INITIALISER (runs before DOMContentLoaded to prevent FOUC)
+// Reads the saved preference from localStorage and applies it
+// immediately so the page never flashes with the wrong theme.
+// =================================================================
+(function () {
+  if (localStorage.getItem('theme') === 'dark')
+    document.documentElement.setAttribute('data-theme', 'dark');
+})();
+
+// =================================================================
+// 0b. CROSS-PAGE SMOOTH SCROLL
 // When arriving from another page with a hash (e.g. index.html#projects),
 // instantly jump to top then smoothly scroll to the target.
 // =================================================================
@@ -19,6 +29,29 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+  // =================================================================
+  // 1. THEME TOGGLE
+  // =================================================================
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    // Sync aria-checked on load
+    themeBtn.setAttribute('aria-checked',
+      document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false'
+    );
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeBtn.setAttribute('aria-checked', 'false');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeBtn.setAttribute('aria-checked', 'true');
+      }
+    });
+  }
+
   // Smooth scroll to hash target after page has rendered
   if (location.hash) {
     const target = document.querySelector(location.hash);

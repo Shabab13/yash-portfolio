@@ -359,6 +359,19 @@ Extends css/style.css for individual project pages.
   font-weight: 600 !important;
 }
 
+[data-theme="dark"] .status-pass {
+  color: #4acd7a !important;
+}
+
+[data-theme="dark"] .status-fail {
+  color: #f06060 !important;
+}
+
+/* Dark mode: table header column divider */
+[data-theme="dark"] .proj-table thead th {
+  border-right-color: rgba(255,255,255,0.06);
+}
+
 /* ── SIDEBAR ── */
 .proj-sidebar {
   display: flex;

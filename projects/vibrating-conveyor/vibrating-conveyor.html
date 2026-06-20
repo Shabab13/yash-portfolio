@@ -19,6 +19,14 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
 
+  <!-- Dark Mode: apply saved theme before paint to prevent FOUC -->
+  <script>
+    (function () {
+      if (localStorage.getItem('theme') === 'dark')
+        document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+
   <link rel="stylesheet" href="../../css/style.css" />
   <link rel="stylesheet" href="../../css/project.css" />
 </head>
@@ -35,7 +43,13 @@
       <li><a href="../../index.html#certifications">Certifications</a></li>
       <li><a href="../../index.html#education">Education</a></li>
     </ul>
-    <a href="mailto:arafyasir2023@gmail.com" class="nav-cta" aria-label="Email Yasir">Contact &#x2197;&#xFE0E;</a>
+    <div class="nav-right">
+      <button id="theme-toggle" class="theme-toggle" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+        <svg class="toggle-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="toggle-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="mailto:arafyasir2023@gmail.com" class="nav-cta" aria-label="Email Yasir">Contact &#x2197;&#xFE0E;</a>
+    </div>
   </nav>
 
   <!-- Project Hero -->
@@ -193,6 +207,29 @@
   </footer>
 
   <script>
+    // Theme toggle
+    (function () {
+      var btn = document.getElementById('theme-toggle');
+      if (btn) {
+        btn.setAttribute('aria-checked',
+          document.documentElement.getAttribute('data-theme') === 'dark' ? 'true' : 'false'
+        );
+        btn.addEventListener('click', function () {
+          var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+          if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            btn.setAttribute('aria-checked', 'false');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            btn.setAttribute('aria-checked', 'true');
+          }
+        });
+      }
+    })();
+
+    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });

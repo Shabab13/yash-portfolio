@@ -72,6 +72,45 @@ TABLE OF CONTENTS
 }
 
 /* ===================================================================
+   1b. DARK MODE TOKENS
+   =================================================================== */
+[data-theme="dark"] {
+  /* ── Brand Colors ── */
+  --white: #0f0f0f;
+  --paper: #161616;
+  --orange: #ff5520;
+  --blue: #4d7aff;
+  --bp: #0d1a2e;
+  --dark: #f0f0ec;
+  --mid: #a8a8a2;
+  --light: #555550;
+  --border: #2a2a28;
+
+  /* ── Interactive & UI States ── */
+  --nav-bg: #0f0f0fef;
+  --hero-hatch: #ff55200d;
+  --orange-hover-strong: #ff552018;
+  --orange-hover-subtle: #ff55200c;
+  --orange-border-hover: #ff552050;
+
+  /* ── Blueprint Card — deep navy dark ── */
+  --bp-bg: #0d1929;
+  --bp-grid: #4d7aff18;
+  --bp-border: #1e3354;
+  --bp-label: #6f9fd8;
+  --bp-id: #4a7ab5;
+  --bp-tb-bg: #ffffff0a;
+  --bp-text: #a8c8f0;
+
+  /* ── Utility Shadows ── */
+  --shadow-strong: #00000050;
+  --shadow-subtle: #00000030;
+  --shadow-card: #00000025;
+  --sec-num: #ffffff0c;
+  --skills-cat: #ffffff40;
+}
+
+/* ===================================================================
    2. RESET & BASE STYLES
    =================================================================== */
 *,
@@ -178,6 +217,89 @@ nav {
 /* ===================================================================
    5. COMMON & EXTRACTED COMPONENTS
    =================================================================== */
+/* ── Nav Right Cluster (toggle + CTA grouped) ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ── Theme Toggle Switch ── */
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 28px;
+  border-radius: 14px;
+  background: #c8c7c1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background .3s ease;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* Sliding knob */
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.28);
+  transition: transform .3s ease;
+  z-index: 1;
+}
+
+/* Moon icon — right side, visible in light mode */
+.toggle-moon {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  color: #8aaad8;
+  pointer-events: none;
+  transition: opacity .25s;
+  opacity: 1;
+}
+
+/* Sun icon — left side, visible in dark mode */
+.toggle-sun {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  color: #ffc14d;
+  pointer-events: none;
+  transition: opacity .25s;
+  opacity: 0;
+}
+
+/* Dark mode: orange track + knob slides right */
+[data-theme="dark"] .theme-toggle {
+  background: var(--orange);
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  transform: translateX(24px);
+}
+
+[data-theme="dark"] .toggle-moon { opacity: 0; }
+[data-theme="dark"] .toggle-sun  { opacity: 1; }
+
 /* ── Buttons ── */
 .btn-dark {
   display: inline-flex;
@@ -430,6 +552,11 @@ h1.name .nm-last {
 #gearSVG {
   width: 100%;
   display: block;
+}
+
+/* Blueprint SVG gear fills adapt to dark mode */
+[data-theme="dark"] #gearSVG circle[fill="#E8F0FA"] {
+  fill: #0d1929;
 }
 
 /* Gear CSS animations */
